@@ -56,6 +56,7 @@ post '/shelf/new' do
     @user = current_user
     @shelf.user = @user
   end
+  @shelf.save
   redirect "/user/#{@user.id}"
 end
 
