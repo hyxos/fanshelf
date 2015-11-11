@@ -3,7 +3,7 @@ get '/' do
   erb :index
 end
 
-post '/users/new' do
+post '/user/new' do
   @user = User.new(
     name: params[:name],
     email: params[:email],
@@ -22,3 +22,17 @@ get '/user/:id' do
   @user = User.find params[:id]
   erb :'user/index'
 end
+
+post '/user/login' do 
+  if @user = User.find_by_name(params[:name]).try(:authenticate, params[:password])
+    session[:id] = @user.id
+    redirect "/user/#{@user.id}"
+  else 
+    @error = "Wrong user name/password"
+    redirect '/'
+  end
+end
+
+
+
+

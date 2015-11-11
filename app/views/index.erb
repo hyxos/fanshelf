@@ -1,6 +1,7 @@
 <h1>WELCOME TO FANSHELF!!!!</h1>
 
-<form method="post" action="/users/new">
+<h2>Sign up!</h2>
+<form method="post" action="/user/new">
   <div>
     <label>Username:</label>
     <input type="text" name="name" value="<% @user && @user.name %>">
@@ -22,6 +23,19 @@
   </div>
 </form>
 
-<p>
-<a href "/shelves">shelves</a>
-</p>
+
+<h2>Login</h2>
+<form method="post" action="/user/login">
+  <div>
+    <label>Username:</label>
+    <input type="text" name="name" value="<% @user && @user.name %>">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" name="password" value="<% @user && @user.password %>"> 
+  </div>
+  <div>
+    <input type="submit" value="Login" >
+  </div>
+</form>
+
