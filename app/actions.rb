@@ -12,8 +12,13 @@ post '/users/new' do
     )
   if @user.save
     session[:id] = @user.id
-    redirect'/user/:id'
+    redirect "/user/#{@user.id}"
   else
     erb :'/'
   end
+end
+
+get '/user/:id' do
+  @user = User.find params[:id]
+  erb :'user/index'
 end
