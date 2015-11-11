@@ -33,6 +33,11 @@ post '/user/login' do
   end
 end
 
+post '/logout' do 
+  session.clear
+  redirect '/'
+end
+
 
 
 
