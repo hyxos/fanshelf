@@ -1,6 +1,6 @@
 class AddFanfics < ActiveRecord::Migration
   def change
-    create_table :fanfic do |t|
+    create_table :fanfics do |t|
       t.belongs_to :shelf, index: true
       t.string :title
       t.string :author

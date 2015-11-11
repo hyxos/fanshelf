@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20151111191638) do
 
-  create_table "fanfic", force: :cascade do |t|
+  create_table "fanfics", force: :cascade do |t|
     t.integer  "shelf_id"
     t.string   "title"
     t.string   "author"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20151111191638) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "fanfic", ["shelf_id"], name: "index_fanfic_on_shelf_id"
+  add_index "fanfics", ["shelf_id"], name: "index_fanfics_on_shelf_id"
 
   create_table "shelves", force: :cascade do |t|
     t.integer  "user_id"

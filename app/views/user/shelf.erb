@@ -1,0 +1,23 @@
+
+
+<form method="post" action="/fanfic/new">
+  <div>
+    <label>Title:</label>
+    <input type="text" name="title" value="<% @fanfic && @fanfic.title %>">
+  </div>
+  <div>
+    <label>Author</label>
+    <input type="text" name="author" value="<% @fanfic && @fanfic.author %>">
+  </div>
+  <div>
+    <label>URL:</label>
+    <input type="text" name="url" value="<% @fanfic && @fanfic.url %>">
+  </div>
+  <div>
+    <input type="submit" value="Create Fanfic" >
+  </div>
+</form>
+
+<% shelf.fanfics.each do |fanfic| %>
+  <p><%= fanfic.title %></p>
+<% end %>

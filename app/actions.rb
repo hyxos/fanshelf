@@ -21,10 +21,21 @@ post '/user/new' do
     )
   if @user.save
     session[:id] = @user.id
+    @shelf = Shelf.new(
+      name: 'Top Shelf'
+      )
+    @shelf.user = @user
+    @shelf.save
     redirect "/user/#{@user.id}"
   else
     erb :'/'
   end
+end
+
+get '/shelf/:id' do
+  @shelf = Shelf.find params[:id]
+  
+  erb :'user/index'
 end
 
 get '/user/:id' do
@@ -60,5 +71,18 @@ post '/shelf/new' do
   redirect "/user/#{@user.id}"
 end
 
-
+post '/shelf/:id/fanfic/new' do
+  if current_user != []
+    @user = current_user
+  end
+  @fanfic = Fanfic.new(
+    title: params[:title],
+    author: params[:author],
+    url: params[:url]
+  )
+  @shelf = Shelf.find params[:id]
+  @fanfic.shelf = @shelf
+  @fanfic.save
+  redirect "/user/#{@user.id}"
+end
 
