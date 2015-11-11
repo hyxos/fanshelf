@@ -34,6 +34,9 @@ end
 
 get '/shelf/:id' do
   @shelf = Shelf.find params[:id]
+  if current_user != []
+    @user = current_user
+  end
   
   erb :'user/index'
 end
