@@ -1,0 +1,27 @@
+<h1>WELCOME TO FANSHELF!!!!</h1>
+
+<form method="post" action="/users/new">
+  <div>
+    <label>Username:</label>
+    <input type="text" name="name" value="<% @user && @user.name %>">
+  </div>
+  <div>
+    <label>Email:</label>
+    <input type="text" name="email" value="<% @user && @user.email %>">
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" name="password" value="<% @user && @user.password %>"> 
+  </div>
+  <div>
+    <label>Confirm password</label>
+    <input type="password" name="password_confirmation" value="<% @user && @user.password %>"> 
+  </div>
+  <div>
+    <input type="submit" value="Signup" >
+  </div>
+</form>
+
+<p>
+<a href "/shelves">shelves</a>
+</p>
