@@ -1,4 +1,13 @@
 # Homepage (Root path)
+
+helpers do
+  def current_user
+    if session[:id] and user = User.find(session[:id])
+      user
+    end
+  end
+end
+
 get '/' do
   erb :index
 end
@@ -20,6 +29,7 @@ end
 
 get '/user/:id' do
   @user = User.find params[:id]
+  @shelves = Shelf.where(user_id: @user.id)
   erb :'user/index'
 end
 
@@ -38,6 +48,16 @@ post '/logout' do
   redirect '/'
 end
 
+post '/shelf/new' do
+  @shelf = Shelf.new(
+    name: params[:name]
+  )
+  if current_user != []
+    @user = current_user
+    @shelf.user = @user
+  end
+  redirect "/user/#{@user.id}"
+end
 
 
 

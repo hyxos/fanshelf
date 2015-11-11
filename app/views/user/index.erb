@@ -5,3 +5,17 @@
     <input type="submit" value="Logout" >
 
 </form>
+
+<form method="post" action="/shelf/new">
+  <div>
+    <label>Shelf name:</label>
+    <input type="text" name="name" value="<% @shelf && @shelf.name %>">
+  </div>
+  <div>
+    <input type="submit" value="Create shelf" >
+  </div>
+</form>
+
+<% @shelves.each do |shelf| %>
+  <p><%= shelf.name %></p>
+<% end %>
