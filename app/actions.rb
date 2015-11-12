@@ -32,6 +32,15 @@ post '/user/new' do
   end
 end
 
+post '/shelf/:id/delete' do
+  if current_user
+    @user = current_user
+    @shelf = Shelf.find params[:id]
+    @shelf.destroy unless @shelf.name = "Top Shelf"
+
+    redirect "/user/#{@user.id}"
+  end
+end
 # get '/shelf/:id' do
 #   if current_user != []
 #     @user = current_user
@@ -87,6 +96,16 @@ post '/shelf/:id/fanfic/new' do
   @shelf = Shelf.find params[:id]
   @fanfic.shelf = @shelf
   @fanfic.save
+  redirect "/user/#{@user.id}"
+end
+
+post '/shelf/:id/fanfic/:id/delete' do
+  if current_user
+    @user = current_user
+  end
+  @fanfic = Fanfic.find params[:id]
+  @fanfic.destroy
+
   redirect "/user/#{@user.id}"
 end
 
