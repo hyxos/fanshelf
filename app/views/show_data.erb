@@ -1,15 +1,12 @@
-<h1>Users</h1>
 <ul>
   <% @users.each do |user| %>
-    <li><%= user.name %>, <%= user.email %></li>
+    <li><%= user.name %> - <%= user.email %></li>
     <ul>
       <% @shelves.where(user_id: user.id).each do |shelf| %>
         <li><%= shelf.name %></li>
         <ul>
           <% @fanfics.where(shelf_id: shelf.id).each do |fanfic| %>
-            <li><%= fanfic.title %></li>
-            <li><%= fanfic.author %></li>
-            <li><%= fanfic.url %></li>
+            <li><%= fanfic.title %> by <%= fanfic.author %> <%= fanfic.url %></li>
             <% end %>
         </ul>
       <% end %>
