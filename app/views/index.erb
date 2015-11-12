@@ -2,42 +2,49 @@
   <h1 class="header">WELCOME TO FANSHELF!!!!</h1>
 
   <div class="row">
-  <div class="offset-by-four columns">
-  <h2>Sign up!</h2>
-  <form method="post" action="/user/new">
-    <div>
-      <input type="text" placeholder="Username" name="name" value="<% @user && @user.name %>">
+    <div class="offset-by-four columns">
+    <h2>Sign up!</h2>
+      
+      <form method="post" action="/user/new">
+        <div>
+          <input type="text" placeholder="Username" name="name" value="<% @user && @user.name %>">
+        </div>
+        <div>
+          <input type="text" placeholder="Email" name="email" value="<% @user && @user.email %>">
+        </div>
+        <div>
+          <input type="password" placeholder="Password" name="password" value="<% @user && @user.password %>"> 
+        </div>
+        <div>
+          <input type="password" placeholder="Confirm Password" name="password_confirmation" value="<% @user && @user.password %>"> 
+        </div>
+        <div>
+          <input type="submit" value="Signup" >
+        </div>
+      </form>
     </div>
-    <div>
-      <input type="text" placeholder="Email" name="email" value="<% @user && @user.email %>">
-    </div>
-    <div>
-      <input type="password" placeholder="Password" name="password" value="<% @user && @user.password %>"> 
-    </div>
-    <div>
-      <input type="password" placeholder="Confirm Password" name="password_confirmation" value="<% @user && @user.password %>"> 
-    </div>
-    <div>
-      <input type="submit" value="Signup" >
-    </div>
-  </form>
-  </div>
   </div>
 
   <div class="row">
-  <div class="offset-by-four columns">
-  <h2>Login</h2>
-  <form method="post" action="/user/login">
-    <div>
-      <input type="text" placeholder="Username" name="name" value="<% @user && @user.name %>">
+    <div class="offset-by-four columns">
+      <h2><a href="#login_window" id="login_bttn" class="login_button">Login</a></h2>
+      <div id="login_window" class="login_window animated fadeIn">
+        <div class="login_text animated fadeInDown">
+          <a href="#close" id="hide_window" title="Close" class="close">X</a>
+          <h3>Login</h3>
+          <form method="post" action="/user/login">
+            <div>
+              <input type="text" placeholder="Username" name="name" value="<% @user && @user.name %>">
+            </div>
+            <div>
+              <input type="password" placeholder="Password" name="password" value="<% @user && @user.password %>"> 
+            </div>
+            <div>
+              <input type="submit" value="Login" >
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    <div>
-      <input type="password" placeholder="Password" name="password" value="<% @user && @user.password %>"> 
-    </div>
-    <div>
-      <input type="submit" value="Login" >
-    </div>
-  </form>
-  </div>
   </div>
 
