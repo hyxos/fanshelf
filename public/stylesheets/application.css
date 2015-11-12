@@ -1,3 +1,16 @@
+.coffin .pillow {
+  padding-left: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #CCC;
+  background: #222;
+  border-bottom: 1px solid black;
+}
+
+
+
+
 .container {
   width: 90%;
 }
@@ -27,7 +40,7 @@
 }
 
 .shelf-wrapper {
-  margin-left: 40px;
+  left: 40px;
 }
 
 .shelf-wrapper:first-child {
