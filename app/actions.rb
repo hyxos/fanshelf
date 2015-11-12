@@ -12,6 +12,15 @@ get '/' do
   erb :index
 end
 
+get '/data' do
+  @users = User.all
+  @shelves = Shelf.all
+  @fanfics = Fanfic.all
+
+  erb :show_data
+end
+
+
 post '/user/new' do
   @user = User.new(
     name: params[:name],
@@ -36,7 +45,7 @@ post '/shelf/:id/delete' do
   if current_user
     @user = current_user
     @shelf = Shelf.find params[:id]
-    @shelf.destroy unless @shelf.name = "Top Shelf"
+    @shelf.destroy unless @shelf.name == "Top Shelf"
 
     redirect "/user/#{@user.id}"
   end
@@ -76,7 +85,7 @@ post '/shelf/new' do
   @shelf = Shelf.new(
     name: params[:name]
   )
-  if current_user != []
+  if current_user
     @user = current_user
     @shelf.user = @user
   end
@@ -85,7 +94,7 @@ post '/shelf/new' do
 end
 
 post '/shelf/:id/fanfic/new' do
-  if current_user != []
+  if current_user
     @user = current_user
   end
   @fanfic = Fanfic.new(
