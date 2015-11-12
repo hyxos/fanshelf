@@ -1,66 +1,80 @@
-<div class="row">
-<div class="offset-by-ten columns">
-  <h3> Hi <%= @user.name %> </h3>
+<div class="coffin">
+  <div class="pillow">Shelves</div>
+  <div>
+    <form method="post" action="/shelf/new">
+      <div>
+        <input type="text" placeholder="Shelf name" name="name" value="<% @shelf && @shelf.name %>">
+      </div>
+      <div>
+        <input type="submit" value="Create shelf" >
+      </div>
+    </form>
 
-<form method="post" action="/logout">
-  
-    <input type="submit" value="Logout" >
-
-</form>
-</div>
-</div>
-<a href="javascript:location.href='http://localhost:3000/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)" onclick="alert('drag to your toolbar')">Bookmarklet</a>
-
-<div class="row">
-<div class="four columns">
-  <form method="post" action="/shelf/new">
-    <div>
-      <input type="text" placeholder="Shelf name" name="name" value="<% @shelf && @shelf.name %>">
-    </div>
-    <div>
-      <input type="submit" value="Create shelf" >
-    </div>
-  </form>
-
-  <% @shelves.each do |shelf| %>
-    <p><%= shelf.name %></p>
+    <% @shelves.each do |shelf| %>
+      <p><%= shelf.name %></p>
     <form method="post" action="/shelf/<%= shelf.id %>/delete">
       <input type="submit" value="Delete Shelf" >
     </form>
+  </div><!--columns-->
 </div>
 
 
-<div class="eight columns">
-  <% shelf.fanfics.each do |fanfic| %>
-    <a href="<%= fanfic.url %>"><div class="fanfic">
-    <p><%= fanfic.title %></p>
-    </div></a>
-    <form method="post" action="/shelf/<%= shelf.id %>/fanfic/<%= fanfic.id %>/delete">
-      <input type="submit" value="Delete Fanfic" >
+<div class="page">
+<div class="container">
+
+<div class="row">
+  <div class="offset-by-ten columns">
+    <h3> Hi <%= @user.name %> </h3>
+
+    <form method="post" action="/logout">
+  
+      <input type="submit" value="Logout" >
+
     </form>
-  <% end %>
-  </div>
-</div>
+  </div><!--column-->
+</div><!--row-->
+<a href="javascript:location.href='http://localhost:3000/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)" onclick="alert('drag to your toolbar')">Bookmarklet</a>
 
-  <div class="row">
-<div class="offset-by-eight columns">
-  <form method="post" action="/shelf/<%= shelf.id %>/fanfic/new">
-    <div>
-      <input type="text" placeholder="Title" name="title" value="<% @fanfic && @fanfic.title %>">
-    </div>
-    <div>
-      <input type="text" placeholder="Author" name="author" value="<% @fanfic && @fanfic.author %>">
-    </div>
-    <div>
-      <input type="text" placeholder="URL" name="url" value="<% @fanfic && @fanfic.url %>">
-    </div>
-    <div>
-      <input type="submit" value="Create Fanfic" >
-    </div>
-  </form>
-  </div>
-  </div>
-  <% end %>
+<div class="row">
+  
+
+
+  <div class="eight columns">
+    <% shelf.fanfics.each do |fanfic| %>
+      <a href="<%= fanfic.url %>">
+        <div class="fanfic">
+          <p><%= fanfic.title %></p>
+        </div>
+      </a>
+      <form method="post" action="/shelf/<%= shelf.id %>/fanfic/<%= fanfic.id %>/delete">
+          <input type="submit" value="Delete Fanfic" >
+      </form>
+    <% end %>
+  </div><!--columns-->
+</div><!--row-->
+
+<div class="row">
+  <div class="offset-by-eight columns">
+    <form method="post" action="/shelf/<%= shelf.id %>/fanfic/new">
+      <div>
+        <input type="text" placeholder="Title" name="title" value="<% @fanfic && @fanfic.title %>">
+      </div>
+      <div>
+        <input type="text" placeholder="Author" name="author" value="<% @fanfic && @fanfic.author %>">
+      </div>
+      <div>
+        <input type="text" placeholder="URL" name="url" value="<% @fanfic && @fanfic.url %>">
+      </div>
+      <div>
+        <input type="submit" value="Create Fanfic" >
+      </div>
+    </form>
+  </div><!--columns-->
+</div><!--row-->
+<% end %>
+
+</div>
+</div>
 
 
 

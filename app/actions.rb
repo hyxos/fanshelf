@@ -36,7 +36,7 @@ post '/shelf/:id/delete' do
   if current_user
     @user = current_user
     @shelf = Shelf.find params[:id]
-    @shelf.destroy unless @shelf.name = "Top Shelf"
+    @shelf.destroy unless @shelf.name == "Top Shelf"
 
     redirect "/user/#{@user.id}"
   end
