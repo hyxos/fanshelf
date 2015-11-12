@@ -12,4 +12,17 @@ $(document).ready(function() {
     $('#login_window').hide();
   }
 
+  $('#login_window').on('click',hideWindow)
+  $('#hide_window').on('click',hideWindow)
+  function hideWindow(){
+    $('#login_window').hide();
+  }
+
+  $('.login_text').on('click',preventClick)
+  function preventClick(e){
+    // debugger
+    e.stopPropagation();
+  }
+
+
 });
