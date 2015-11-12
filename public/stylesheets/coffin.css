@@ -1,0 +1,118 @@
+/*
+ * Coffin.css V1.0.0
+ * Copyright 2012, @fat
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Table of Contents
+==================================================
+    #Core   (Coffin)
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape) */
+
+/*  #Core (Coffin)
+================================================== */
+
+/*body {
+  background: #3b3b3b;
+}*/
+
+
+.page {
+  position: relative;
+  z-index: 10;
+  margin-left: 270px;
+  background: #fff;
+  width: auto;
+  border-radius: 5px;
+  box-shadow: -4px 0 10px -5px rgba(0, 0, 0, 0.8);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
+.coffin {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  margin-left: 0;
+  overflow: auto;
+}
+
+.coffin .pillow {
+  padding-left: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #CCC;
+  background: #222;
+  border-bottom: 1px solid black;
+}
+
+.coffin .nav li {
+  margin-bottom: 0;
+}
+
+.coffin .nav li a {
+  display: block;
+  padding-left: 25px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 50px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #333;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.coffin .nav li a:hover,
+.coffin .nav li a.active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* #Tablet (Portrait)
+================================================== */
+
+/* Note: Design for a width of 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .container {
+    width: 556px;
+  }
+}
+
+/*  #Mobile (Portrait)
+================================================== */
+
+/* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+
+  .container {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .page {
+    margin-left: 0;
+  }
+}
+
+/* #Mobile (Landscape)
+================================================== */
+
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .container {
+    width: 420px;
+  }
+}

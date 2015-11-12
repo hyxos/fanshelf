@@ -1,6 +1,27 @@
+.coffin .pillow {
+  padding-left: 25px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 30px;
+  color: #CCC;
+  background: #222;
+  border-bottom: 1px solid black;
+}
+
+.container {
+  width: 90%;
+}
+
 .header {
   text-align: center;
 }
+
+.fanfic-wrapper {
+  display: inline-block;
+  margin: 10px;
+}
+
+.fanfic-wrapper a { display: inline-block; }
 
 .fanfic {
   border: 1px solid #000;
@@ -11,17 +32,14 @@
   width: 200px;
 }
 
-.top {
-    position:absolute;
-    left:0; right:0;
-    height: 92px;
+.shelf-name {
+  font-size: 20px;
 }
-.left {
-    position:absolute;
-    left:0; top:92px; bottom: 0;
-    width: 178px;
+
+.shelf-wrapper {
+  left: 40px;
 }
-.main {
-    position: absolute;
-    left:178px; top:92px; right:0; bottom:0;
+
+.shelf-wrapper:first-child {
+  margin-top: 20px;
 }
