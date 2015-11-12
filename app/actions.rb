@@ -28,18 +28,19 @@ post '/user/new' do
     @shelf.save
     redirect "/user/#{@user.id}"
   else
-    erb :'/'
+    erb :'index'
   end
 end
 
-get '/shelf/:id' do
-  @shelf = Shelf.find params[:id]
-  if current_user != []
-    @user = current_user
-  end
+# get '/shelf/:id' do
+#   if current_user != []
+#     @user = current_user
+#   end
+
+#   @shelf = Shelf.find params[:id]
   
-  erb :'user/index'
-end
+#   erb :'user/index'
+# end
 
 get '/user/:id' do
   @user = User.find params[:id]
