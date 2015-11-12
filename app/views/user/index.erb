@@ -1,5 +1,5 @@
-<div class="row">
-<div class="offset-by-ten columns">
+<div class="top">
+
   <h3> Hi <%= @user.name %> </h3>
 
 <form method="post" action="/logout">
@@ -8,11 +8,11 @@
 
 </form>
 </div>
-</div>
+
+<div class="left">
 <a href="javascript:location.href='http://localhost:3000/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)" onclick="alert('drag to your toolbar')">Bookmarklet</a>
 
-<div class="row">
-<div class="four columns">
+
   <form method="post" action="/shelf/new">
     <div>
       <input type="text" placeholder="Shelf name" name="name" value="<% @shelf && @shelf.name %>">
@@ -30,7 +30,7 @@
 </div>
 
 
-<div class="eight columns">
+<div class="main">
   <% shelf.fanfics.each do |fanfic| %>
     <a href="<%= fanfic.url %>" target="_blank"><div class="fanfic">
     <p><%= fanfic.title %></p>
@@ -39,11 +39,10 @@
       <input type="submit" value="Delete Fanfic" >
     </form>
   <% end %>
-  </div>
-</div>
+  
 
-  <div class="row">
-<div class="offset-by-eight columns">
+
+  
   <form method="post" action="/shelf/<%= shelf.id %>/fanfic/new">
     <div>
       <input type="text" placeholder="Title" name="title" value="<% @fanfic && @fanfic.title %>">
@@ -58,7 +57,6 @@
       <input type="submit" value="Create Fanfic" >
     </div>
   </form>
-  </div>
   </div>
   <% end %>
 
