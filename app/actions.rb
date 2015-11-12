@@ -90,3 +90,11 @@ post '/shelf/:id/fanfic/new' do
   redirect "/user/#{@user.id}"
 end
 
+get '/submit' do
+  if current_user
+    @user = current_user
+    @fanfic = Fanfic.new({url: params[:url], title: params[:title]})
+    @fanfic.shelf = Shelf.where(user_id: @user.id).where(name: 'Top Shelf').first
+    @fanfic.save
+  end
+end

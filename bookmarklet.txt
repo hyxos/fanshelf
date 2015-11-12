@@ -2,9 +2,8 @@
 
 
 
-<a href="javascript:location.href='http://localhost:9393/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)&userid=<%= @user.id %>" onclick="alert('drag to your toolbar')">Bookmarklet</a>
+<a href="javascript:location.href='http://localhost:9393/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)&shelfid=<%= @shelf.id %>" onclick="alert('drag to your toolbar')">Bookmarklet</a>
 
 get '/submit' do
-  Book.new({url: params[:url], title: params[:title]})
-
+  Fanfic.new({url: params[:url], title: params[:title]})
 end
