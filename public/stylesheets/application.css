@@ -1,0 +1,12 @@
+.header {
+  text-align: center;
+}
+
+.fanfic {
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: inline-block;
+  height: 200px;
+  padding: 5px;
+  width: 200px;
+}
