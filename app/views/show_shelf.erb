@@ -1,0 +1,8 @@
+<h1><%= @shelf.name %></h1>
+<small>(<%= @shelf.user.name %>)</small>
+<ul>
+  <% @shelf.fanfics.each do |fanfic| %>
+    <li><%= fanfic.name %></li>
+  <% end %>
+</ul>
+
