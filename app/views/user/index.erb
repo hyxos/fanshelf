@@ -57,9 +57,9 @@
     <div class="row">
       <div class="offset-by-eight columns">
         <form method="post" action="/fanfic/new">
-          <select name="shelf_id">
+          <select name="shelf">
             <% @shelves.each do |shelf| %>
-              <option value="<%= shelf.id%>"><%= shelf.name %></option>
+              <option value="<%= shelf.id %>"><%= shelf.name %></option>
             <% end %>
           </select>
           <div>

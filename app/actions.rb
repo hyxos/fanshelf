@@ -92,7 +92,7 @@ post '/shelf/new' do
   redirect "/user"
 end
 
-post '/shelf/:id/fanfic/new' do
+post '/fanfic/new' do
   if current_user
     @user = current_user
   end
@@ -101,7 +101,8 @@ post '/shelf/:id/fanfic/new' do
     author: params[:author],
     url: params[:url]
   )
-  @shelf = Shelf.find params[:id]
+  binding.pry
+  @shelf = Shelf.find params[:shelf]
   @fanfic.shelf = @shelf
   @fanfic.save
   redirect "/user"
