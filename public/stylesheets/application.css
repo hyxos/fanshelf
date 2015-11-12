@@ -1,6 +1,17 @@
+.container {
+  width: 90%;
+}
+
 .header {
   text-align: center;
 }
+
+.fanfic-wrapper {
+  display: inline-block;
+  margin: 10px;
+}
+
+.fanfic-wrapper a { display: inline-block; }
 
 .fanfic {
   border: 1px solid #000;
@@ -9,4 +20,16 @@
   height: 200px;
   padding: 5px;
   width: 200px;
+}
+
+.shelf-name {
+  font-size: 20px;
+}
+
+.shelf-wrapper {
+  margin-left: 40px;
+}
+
+.shelf-wrapper:first-child {
+  margin-top: 20px;
 }
