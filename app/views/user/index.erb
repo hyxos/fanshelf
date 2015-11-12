@@ -32,7 +32,7 @@
 
 <div class="eight columns">
   <% shelf.fanfics.each do |fanfic| %>
-    <a href="<%= fanfic.url %>"><div class="fanfic">
+    <a href="<%= fanfic.url %>" target="_blank"><div class="fanfic">
     <p><%= fanfic.title %></p>
     </div></a>
     <form method="post" action="/shelf/<%= shelf.id %>/fanfic/<%= fanfic.id %>/delete">
