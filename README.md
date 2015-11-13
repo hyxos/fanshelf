@@ -1,10 +1,8 @@
-Sinatra
+Fanshelf
 =============
 
-Brought to you by Lighthouse Labs
+Fanshelf is an app for organizing your favourite fanfics.
 
-## Getting Started
-
-1. `bundle install`
-2. `shotgun -p 3000 -o 0.0.0.0`
-3. Visit `http://localhost:3000/` in your browser
+Fanfics can be put on different shelves and there is even a 
+bookmarklet for automatically adding links to the fanfics to your
+account.
