@@ -15,9 +15,11 @@
     <div class="shelf-wrapper">
       <% @shelves.each do |shelf| %>
         <p class="shelf-name"><%= shelf.name %></p>
-        <form method="post" action="/shelf/<%= shelf.id %>/delete">
-          <input type="submit" value="Delete Shelf" >
-        </form>
+        <% if shelf.name != 'Top Shelf' %>
+          <form method="post" action="/shelf/<%= shelf.id %>/delete">
+            <input type="submit" value="Delete Shelf" >
+          </form>
+        <% end %>
       <% end %>
     </div><!--shelf-wrapper-->
   </div><!--columns-->
@@ -36,7 +38,12 @@
     <a href="javascript:location.href='http://localhost:3000/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)" onclick="alert('drag to your toolbar')">Bookmarklet</a>
     <div class="row">
         <div class="offset-by-eight columns">
-          <%= erb :'user/_add_fanfic' %>
+          <form method="post" action="/fanfic/new">
+            <%= erb :'user/_fanfic_form' %>
+            <div>
+              <input type="submit" value="Create Fanfic" >
+            </div>
+          </form>
         </div><!--columns-->
       </div><!--row-->
     <section class="fanfics row">
@@ -52,6 +59,9 @@
               </a>
               <form method="post" action="/fanfic/<%= fanfic.id %>/delete">
                   <input type="submit" value="Delete Fanfic" >
+              </form>
+              <form method="get" action="/fanfic/<%= fanfic.id %>/edit">
+                  <input type="submit" value="Edit Fanfic" >
               </form>
             </div>
           <% end %>
