@@ -21,7 +21,8 @@ $(document).ready(function() {
   $('.login_text').on('click',preventClick)
   function preventClick(e){
     // debugger
-    e.stopPropagation();
+    e.stopPropagation
+    ();
   }
 
 
