@@ -10,8 +10,6 @@
   border-bottom: 1px solid black;
 }
 
-
-
 .container {
   width: 80%;
 }
@@ -29,6 +27,7 @@
   background-size: cover;
   padding-top: 55px;
   padding-bottom: 7.5em;
+  width:100%;
   
 }
 
@@ -96,12 +95,24 @@
   color: black;
 }
 
-.sign_up{
+.sign_up_title{
   color:white;
 }
 
-.sign_up_button{
-  color:white;
+.sign_up{
+  text-align: center;
+}
+
+input.sign_up_button{
+  background-color:white;
+}
+
+button.login{
+  background-color:white;
+}
+
+input.loginbttn{
+  background-color:white;
 }
 .login_button{
   font-size:25px;
@@ -126,21 +137,23 @@
   border: 1px solid #000;
   border-radius: 5px;
   text-align: center;
-  z-index: 999;
+  z-index:200;
   width: 400px;
   margin: 0 auto;
   margin-top: 25vh;
 }
 
 .close{
-position: absolute;
+z-index: 210;
 right: 0;
 top:0;
 width: 25px;
+position: absolute;
 border-radius: 50px;
-background-color: rgba(250,180,180,1);
+background-color: rgba(45,45,45,1);
 
 }
+
 .close:hover { 
   background: #00d9ff; }
 
