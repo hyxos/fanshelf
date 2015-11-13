@@ -1,6 +1,6 @@
 
 <div class="coffin">
-  <div class="pillow">Shelves</div>
+  <div class="pillow">Your Shelves</div>
   <div>
     <div class="shelf-wrapper">
       <form method="post" action="/shelf/new">
@@ -29,16 +29,18 @@
 <div class="page">
   <div class="container">
     <div class="row">
-      <div class="offset-by-ten columns">
-        <h3> Hi <%= @user.name %> </h3>
-        <form method="post" action="/logout">
-          <input type="submit" value="Logout">
-        </form>
+      <div class="twelve columns">
+        <div class="user-wrapper">
+          <h3> Hi <%= @user.name %> </h3>
+          <form method="post" action="/logout">
+            <input type="submit" value="Logout">
+          </form>
+        </div><!--user-wrapper-->
       </div><!--column-->
     </div><!--row-->
-    <a href="javascript:location.href='http://localhost:3000/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)" onclick="alert('drag to your toolbar')">Bookmarklet</a>
+    <a href="javascript:location.href='http://localhost:3000/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)" onclick="alert('drag to your toolbar')"><button class="fanshelf">Fanshelf</button></a>
     <div class="row">
-        <div class="offset-by-eight columns">
+        <div class="ten columns">
           <form method="post" action="/fanfic/new">
             <%= erb :'user/_fanfic_form' %>
             <div>
@@ -61,7 +63,7 @@
               </a>
               <form method="post" action="/fanfic/<%= fanfic.id %>/delete">
                   <input type="hidden" name="_method" value="delete">
-                  <input type="submit" value="Delete" >
+                  <input class="delete-fanfic" type="submit" value="Delete" >
               </form>
               <form method="get" action="/fanfic/<%= fanfic.id %>/edit">
                   <input type="submit" value="Edit" >

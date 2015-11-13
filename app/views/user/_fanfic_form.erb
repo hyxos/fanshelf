@@ -1,18 +1,23 @@
-  <select name="shelf">
-    <% @shelves.each do |shelf| %>
-      <option value="<%= shelf.id %>"><%= shelf.name %></option>
-    <% end %>
-  </select>
-  <div>
+<form method="post" action="/fanfic/new">
+  <div class="two columns">
+    <select name="shelf">
+      <% @shelves.each do |shelf| %>
+        <option value="<%= shelf.id %>"><%= shelf.name %></option>
+      <% end %>
+    </select>
+  <div class="three columns">
     <% if @fanfic %><p>Title:</p><% end %>
     <input type="text" placeholder="Title" name="title" value="<%= @fanfic ? @fanfic.title : nil %>">
   </div>
-  <div>
+  <div class="three columns">
     <% if @fanfic %><p>Author:</p><% end %>
     <input type="text" placeholder="Author" name="author" value="<%= @fanfic ? @fanfic.author : nil %>">
   </div>
-  <div>
+  <div class="three columns">
     <% if @fanfic %><p>URL:</p><% end %>
     <input type="text" placeholder="URL" name="url" value="<%= @fanfic ? @fanfic.url : nil %>">
   </div>
-  
+  <div class="one column">
+    <input type="submit" value="Create Fanfic" >
+  </div>
+</form>
