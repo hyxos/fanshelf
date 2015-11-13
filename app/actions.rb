@@ -101,7 +101,6 @@ post '/fanfic/new' do
     author: params[:author],
     url: params[:url]
   )
-  binding.pry
   @shelf = Shelf.find params[:shelf]
   @fanfic.shelf = @shelf
   @fanfic.save

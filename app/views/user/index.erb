@@ -34,10 +34,15 @@
       </div><!--column-->
     </div><!--row-->
     <a href="javascript:location.href='http://localhost:3000/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)" onclick="alert('drag to your toolbar')">Bookmarklet</a>
-    
+    <div class="row">
+        <div class="offset-by-eight columns">
+          <%= erb :'user/_add_fanfic' %>
+        </div><!--columns-->
+      </div><!--row-->
     <section class="fanfics row">
       <div class="twelve columns">
         <% @shelves.each do |shelf| %>
+          <h3><%= shelf.name %></h3>
           <% shelf.fanfics.each do |fanfic| %>
             <div class="fanfic-wrapper">
               <a href="<%= fanfic.url %>" target="_blank">
@@ -54,29 +59,7 @@
       </div><!--columns-->
     </section><!--row-->
 
-    <div class="row">
-      <div class="offset-by-eight columns">
-        <form method="post" action="/fanfic/new">
-          <select name="shelf">
-            <% @shelves.each do |shelf| %>
-              <option   value="<%= shelf.id %>"><%= shelf.name %></option>
-            <% end %>
-          </select>
-          <div>
-            <input type="text" placeholder="Title" name="title" value="<% @fanfic && @fanfic.title %>">
-          </div>
-          <div>
-            <input type="text" placeholder="Author" name="author" value="<% @fanfic && @fanfic.author %>">
-          </div>
-          <div>
-            <input type="text" placeholder="URL" name="url" value="<% @fanfic && @fanfic.url %>">
-          </div>
-          <div>
-            <input type="submit" value="Create Fanfic" >
-          </div>
-        </form>
-      </div><!--columns-->
-    </div><!--row-->
+    
   </div>
 </div>
 
