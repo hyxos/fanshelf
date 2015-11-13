@@ -1,3 +1,13 @@
+get '/fanfic/:id/edit' do
+  if current_user
+    @user = current_user
+  end
+  @shelves = Shelf.where(user_id: @user.id)
+  @fanfic = Fanfic.find params[:id]
+
+  erb :'user/fanfic'
+end
+
 post '/fanfic/new' do
   if current_user
     @user = current_user
@@ -13,27 +23,7 @@ post '/fanfic/new' do
   redirect "/user"
 end
 
-post '/fanfic/:id/delete' do
-  if current_user
-    @user = current_user
-  end
-  @fanfic = Fanfic.find params[:id]
-  @fanfic.destroy
-
-  redirect "/user"
-end
-
-get '/fanfic/:id/edit' do
-  if current_user
-    @user = current_user
-  end
-  @shelves = Shelf.where(user_id: @user.id)
-  @fanfic = Fanfic.find params[:id]
-
-  erb :'user/fanfic'
-end
-
-post '/fanfic/:id/edit' do
+put '/fanfic/:id/edit' do
   if current_user
     @user = current_user
   end
@@ -47,3 +37,14 @@ post '/fanfic/:id/edit' do
 
   redirect "/user"
 end
+
+delete '/fanfic/:id/delete' do
+  if current_user
+    @user = current_user
+  end
+  @fanfic = Fanfic.find params[:id]
+  @fanfic.destroy
+
+  redirect "/user"
+end
+

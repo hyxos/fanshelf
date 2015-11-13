@@ -17,6 +17,7 @@
         <p class="shelf-name"><%= shelf.name %></p>
         <% if shelf.name != 'Top Shelf' %>
           <form method="post" action="/shelf/<%= shelf.id %>/delete">
+            <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Delete" >
           </form>
         <% end %>
@@ -59,6 +60,7 @@
                 </div>
               </a>
               <form method="post" action="/fanfic/<%= fanfic.id %>/delete">
+                  <input type="hidden" name="_method" value="delete">
                   <input type="submit" value="Delete" >
               </form>
               <form method="get" action="/fanfic/<%= fanfic.id %>/edit">

@@ -1,6 +1,7 @@
 <h1><%= @fanfic.title %></h1>
 
 <form method="post" action="/fanfic/<%= @fanfic.id %>/edit">
+  <input type="hidden" name="_method" value="put">
   <%= erb :'user/_fanfic_form' %>
   <div>
     <input type="submit" value="Edit" >

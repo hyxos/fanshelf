@@ -16,7 +16,7 @@ post '/shelf/new' do
   redirect "/user"
 end
 
-post '/shelf/:id/delete' do
+delete '/shelf/:id/delete' do
   if current_user
     @user = current_user
     @shelf = Shelf.find params[:id]
