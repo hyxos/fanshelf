@@ -8,7 +8,7 @@
           <input type="text" placeholder="Shelf name" name="name" value="<% @shelf && @shelf.name %>">
         </div>
         <div>
-          <input type="submit" value="Create shelf" >
+          <input type="submit" value="Create" >
         </div>
       </form>
     </div>
@@ -17,7 +17,7 @@
         <p class="shelf-name"><%= shelf.name %></p>
         <% if shelf.name != 'Top Shelf' %>
           <form method="post" action="/shelf/<%= shelf.id %>/delete">
-            <input type="submit" value="Delete Shelf" >
+            <input type="submit" value="Delete" >
           </form>
         <% end %>
       <% end %>
@@ -54,14 +54,15 @@
             <div class="fanfic-wrapper">
               <a href="<%= fanfic.url %>" target="_blank">
                 <div class="fanfic">
-                  <p><%= fanfic.title %></p>
+                  <p>Title: <%= fanfic.title %></p>
+                  <p>Author: <%= fanfic.author%></p>
                 </div>
               </a>
               <form method="post" action="/fanfic/<%= fanfic.id %>/delete">
-                  <input type="submit" value="Delete Fanfic" >
+                  <input type="submit" value="Delete" >
               </form>
               <form method="get" action="/fanfic/<%= fanfic.id %>/edit">
-                  <input type="submit" value="Edit Fanfic" >
+                  <input type="submit" value="Edit" >
               </form>
             </div>
           <% end %>

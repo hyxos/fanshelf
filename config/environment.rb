@@ -27,5 +27,15 @@ end
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
-# Load the routes / actions
-require APP_ROOT.join('app', 'actions')
+# # Load the routes / actions
+# require APP_ROOT.join('app', 'actions')
+
+# => Load separate action files
+Dir.glob(File.join(APP_ROOT, 'app', 'actions', '**', '*')).each do |file|
+  require file
+end
+
+# => Load separate helper files
+Dir.glob(File.join(APP_ROOT, 'app', 'helpers', '**', '*')).each do |file|
+  require file
+end
