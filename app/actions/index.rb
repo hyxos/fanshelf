@@ -1,6 +1,6 @@
 get '/' do
   if current_user
-    erb :'user/index'
+    redirect '/user'
   else
     erb :index
   end

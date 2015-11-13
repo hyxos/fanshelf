@@ -1,5 +1,6 @@
-<h1><%= @fanfic.title %></h1>
+  
 <div class="row">
+  <h1 class="title"><%= @fanfic.title %></h1>
   <div class="ten columns">
     <form method="post" action="/fanfic/<%= @fanfic.id %>/edit">
       <input type="hidden" name="_method" value="put">
