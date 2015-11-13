@@ -1,0 +1,8 @@
+<h1><%= @fanfic.title %></h1>
+
+<form method="post" action="/fanfic/<%= @fanfic.id %>/edit">
+  <%= erb :'user/_fanfic_form' %>
+  <div>
+    <input type="submit" value="Edit Fanfic" >
+  </div>
+</form>
