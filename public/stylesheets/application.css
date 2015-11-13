@@ -1,15 +1,25 @@
 .coffin .pillow {
   padding-left: 25px;
-  font-size: 13px;
-  font-weight: bold;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  font-size: 30px;
+  font-weight: normal;
   line-height: 30px;
-  color: #CCC;
+  color: #ccc;
   background: #222;
   border-bottom: 1px solid black;
 }
 
 .container {
-  width: 90%;
+  width: 80%;
+}
+
+.delete-fanfic {
+  margin-top: 10px;
+}
+
+.fanshelf {
+  margin-bottom: 50px;
 }
 
 .header {
@@ -32,18 +42,27 @@
   width: 200px;
 }
 
+.coffin .pillow {
+  font-size: 30px;
+}
 
 .shelf-name {
   font-size: 20px;
 }
 
 .shelf-wrapper {
-  left: 40px;
+  margin-left: 40px;
 }
 
 .shelf-wrapper:first-child {
   margin-top: 20px;
 }
+
+.user-wrapper {
+  float: right;
+}
+
+/*--------------LANDING PAGE------------*/
 
 .login_window{
   display: none;
