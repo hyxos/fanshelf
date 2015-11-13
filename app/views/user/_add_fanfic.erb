@@ -1,0 +1,19 @@
+<form method="post" action="/fanfic/new">
+  <select name="shelf">
+    <% @shelves.each do |shelf| %>
+      <option value="<%= shelf.id %>"><%= shelf.name %></option>
+    <% end %>
+  </select>
+  <div>
+    <input type="text" placeholder="Title" name="title" value="<% @fanfic && @fanfic.title %>">
+  </div>
+  <div>
+    <input type="text" placeholder="Author" name="author" value="<% @fanfic && @fanfic.author %>">
+  </div>
+  <div>
+    <input type="text" placeholder="URL" name="url" value="<% @fanfic && @fanfic.url %>">
+  </div>
+  <div>
+    <input type="submit" value="Create Fanfic" >
+  </div>
+</form>
