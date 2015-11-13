@@ -123,5 +123,7 @@ get '/submit' do
     @fanfic = Fanfic.new({url: params[:url], title: params[:title]})
     @fanfic.shelf = Shelf.where(user_id: @user.id).where(name: 'Top Shelf').first
     @fanfic.save
+
+    redirect "/user"
   end
 end
