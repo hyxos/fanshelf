@@ -1,12 +1,15 @@
-
-
-  <h1 class="header" style="font-family: 'Dancing Script'">WELCOME TO FANSHELF!!!!</h1>
+  <!-- <div class="backdrop">
+    <img src="assets/landing_page_pic.jpg">
+  </div> -->
+<div class="background">
+  <h1 class="header" >WELCOME TO FANSHELF!!!!</h1>
 
 
   <div class="row">
-    <div class="offset-by-four columns">
-    <h2 >Sign up!</h2>
-      
+    <div class="offset-by-five columns">
+      <div class="sign_up">
+        <h2>Sign up!</h2>
+      </div>
       <form method="post" action="/user/new">
         <div>
           <input type="text" placeholder="Username" name="name" value="<% @user && @user.name %>">
@@ -20,7 +23,7 @@
         <div>
           <input type="password" placeholder="Confirm Password" name="password_confirmation" value="<% @user && @user.password %>"> 
         </div>
-        <div>
+        <div class="sign_up_button">
           <input type="submit" value="Signup" >
         </div>
       </form>
@@ -29,7 +32,7 @@
 
   <div class="row">
     <div class="offset-by-four columns">
-      <h2><a href="#login_window" id="login_bttn" class="login_button">Login</a></h2>
+      <a href="#login_window" id="login_bttn" class="login_button"><button>Login</button></a>
       <div id="login_window" class="login_window animated fadeIn">
         <div class="login_text animated fadeInDown">
           <a href="#hide_window" id="hide_window" title="Close" class="close">X</a>
@@ -49,5 +52,5 @@
       </div>
     </div>
   </div>
-  </div>
-
+</div>
+</div>
