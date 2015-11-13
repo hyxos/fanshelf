@@ -1,3 +1,7 @@
 get '/' do
-  erb :index
+  if current_user
+    erb :'user/index'
+  else
+    erb :index
+  end
 end

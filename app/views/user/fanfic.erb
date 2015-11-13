@@ -1,9 +1,12 @@
 <h1><%= @fanfic.title %></h1>
-
-<form method="post" action="/fanfic/<%= @fanfic.id %>/edit">
-  <input type="hidden" name="_method" value="put">
-  <%= erb :'user/_fanfic_form' %>
-  <div>
-    <input type="submit" value="Save" >
+<div class="row">
+  <div class="ten columns">
+    <form method="post" action="/fanfic/<%= @fanfic.id %>/edit">
+      <input type="hidden" name="_method" value="put">
+      <%= erb :'user/_fanfic_form' %>
+      <div class="three columns">
+        <input type="submit" value="Save" >
+      </div>
+    </form>
   </div>
-</form>
+</div>

@@ -6,15 +6,15 @@
     </select>
   </div>
   <div class="three columns">
-    <% if @fanfic %><p>Title:</p><% end %>
+    <% if @fanfic %>Title:<% end %>
     <input type="text" placeholder="Title" name="title" value="<%= @fanfic ? @fanfic.title : nil %>">
   </div>
   <div class="three columns">
-    <% if @fanfic %><p>Author:</p><% end %>
+    <% if @fanfic %>Author:<% end %>
     <input type="text" placeholder="Author" name="author" value="<%= @fanfic ? @fanfic.author : nil %>">
   </div>
   <div class="three columns">
-    <% if @fanfic %><p>URL:</p><% end %>
+    <% if @fanfic %>URL:<% end %>
     <input type="text" placeholder="URL" name="url" value="<%= @fanfic ? @fanfic.url : nil %>">
   </div>
   
