@@ -1,6 +1,6 @@
 
 <div class="coffin">
-  <div class="pillow">Your Shelves</div>
+  <div class="pillow shelf-sidebar">Your Shelves</div>
   <div>
     <div class="shelf-wrapper">
       <form method="post" action="/shelf/new">
@@ -8,7 +8,7 @@
           <input type="text" placeholder="Shelf name" name="name" value="<% @shelf && @shelf.name %>">
         </div>
         <div>
-          <input type="submit" value="Create" >
+          <input class="create" type="submit" value="Create" >
         </div>
       </form>
     </div>
@@ -18,7 +18,7 @@
         <% if shelf.name != 'Top Shelf' %>
           <form method="post" action="/shelf/<%= shelf.id %>/delete">
             <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Delete" >
+            <input class="delete" type="submit" value="Delete" >
           </form>
         <% end %>
       <% end %>
@@ -31,20 +31,27 @@
     <div class="row">
       <div class="twelve columns">
         <div class="user-wrapper">
-          <h3> Hi <%= @user.name %> </h3>
+          <h3 class="user-greeting"> Hi <%= @user.name %>, </h3>
           <form method="post" action="/logout">
-            <input type="submit" value="Logout">
+            <input class="logout" type="submit" value="Logout">
           </form>
         </div><!--user-wrapper-->
       </div><!--column-->
     </div><!--row-->
-    <a href="javascript:location.href='http://localhost:3000/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)" onclick="alert('drag to your toolbar')"><button class="fanshelf">Fanshelf</button></a>
+    <div class="row">
+      <div class="two columns">
+        <a href="javascript:location.href='http://localhost:3000/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)" onclick="alert('drag to your toolbar')"><button class="fanshelf">Fanshelf</button></a>
+      </div>
+      <div class="ten columns">
+        <h3 class="drag">Drag me to your toolbar!</h3>
+      </div>
+    </div>
     <div class="row">
         <div class="ten columns">
           <form method="post" action="/fanfic/new">
             <%= erb :'user/_fanfic_form' %>
             <div class="one column">
-              <input type="submit" value="Create Fanfic" >
+              <input class="create" type="submit" value="Create Fanfic" >
             </div>
           </form>
         </div><!--columns-->
@@ -52,13 +59,13 @@
     <section class="fanfics row">
       <div class="twelve columns">
         <% @shelves.each do |shelf| %>
-          <h3><%= shelf.name %></h3>
+          <h3 class="shelf-title"><%= shelf.name %></h3>
           <% shelf.fanfics.each do |fanfic| %>
             <div class="fanfic-wrapper">
               <a href="<%= fanfic.url %>" target="_blank">
                 <div class="fanfic">
-                  <p>Title: <%= fanfic.title %></p>
-                  <p>Author: <%= fanfic.author%></p>
+                  <p><%= fanfic.title %></p>
+                  <p>By: <%= fanfic.author%></p>
                 </div>
               </a>
               <form method="post" action="/fanfic/<%= fanfic.id %>/delete">
@@ -66,7 +73,7 @@
                   <input class="delete-fanfic" type="submit" value="Delete" >
               </form>
               <form method="get" action="/fanfic/<%= fanfic.id %>/edit">
-                  <input type="submit" value="Edit" >
+                  <input class="edit-fanfic" type="submit" value="Edit" >
               </form>
             </div>
           <% end %>
