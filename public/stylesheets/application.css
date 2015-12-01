@@ -1,3 +1,13 @@
+body {
+  font-family: 'Open Sans';
+}
+
+input{
+  background-color: #fff;
+}
+/*.coffin {
+  background-color: #D8CEFF;
+}*/
 .coffin .pillow {
   padding-left: 25px;
   padding-bottom: 25px;
@@ -5,7 +15,7 @@
   font-size: 30px;
   font-weight: normal;
   line-height: 30px;
-  color: #ccc;
+  color: #fff;
   background: #222;
   border-bottom: 1px solid black;
 }
@@ -20,13 +30,20 @@
 
 .fanshelf {
   margin-bottom: 50px;
+  font-size: 20px;
+  color: #000;
+  border: 1px solid #000;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #FFF;
+
 }
 
 .background{
   background-image: url(../assets/landing_page_pic.jpg);
   background-size: cover;
-  padding-top: 55px;
-  padding-bottom: 7.5em;
+  padding-top: 75px;
+  padding-bottom: 14.5em;
   width:100%;
   
 }
@@ -34,7 +51,9 @@
 .header {
   color: white;
   text-align: center;
-  margin-top: 20vh;
+  margin-top: 75px;
+  font-weight: 700;
+  font-size: 65px;
 }
 
 .fanfic-wrapper {
@@ -51,6 +70,9 @@
   height: 200px;
   padding: 5px;
   width: 200px;
+  color: #eee;
+  font-size: 18px;
+  background-color: #444;
 }
 
 .coffin .pillow {
@@ -69,8 +91,46 @@
   margin-top: 20px;
 }
 
+.tagline {
+  text-align: center;
+  color: #fff;
+}
+
 .user-wrapper {
   float: right;
+  margin-top: 20px;
+}
+
+.user-greeting {
+  font-size: 28px;
+}
+
+.shelf-sidebar {
+  color: #fff;
+}
+
+.drag {
+  font-size: 28px;
+  font-weight: 700;
+  margin-left: 25px;
+}
+
+.shelf-title {
+  margin-top: 45px;
+}
+
+.page {
+  background-image: url(../assets/mainpage.jpg);
+  background-size: cover;
+}
+
+input.delete-fanfic,
+input.edit-fanfic,
+input.logout,
+input.create,
+input.delete {
+  background-color: #fff;
+  border: 1px solid #000;
 }
 
 /*--------------LANDING PAGE------------*/
@@ -104,11 +164,19 @@
 }
 
 input.sign_up_button{
-  background-color:white;
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #fff;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-size: 16px;
 }
 
 button.login{
-  background-color:white;
+  background-color: none;
+  color: #fff;
+  border: 1px solid #fff;
+  font-family:'Open Sans';
 }
 
 input.loginbttn{
@@ -156,4 +224,31 @@ background-color: rgba(45,45,45,1);
 
 .close:hover { 
   background: #00d9ff; }
+
+
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+            
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
+
 

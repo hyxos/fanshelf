@@ -2,14 +2,12 @@
     <img src="assets/landing_page_pic.jpg">
   </div> -->
 <div class="background">
-  <h1 class="header" >WELCOME TO FANSHELF!!!!</h1>
+  <h1 class="header animated fadeInDown">FANSHELF</h1>
+  <h3 class="tagline animated fadeIn">A new way to organize your favourite fanfiction.</h3>
 
 
     <div class="sign_up">
       
-        <div class="sign_up_title">
-          <h2>Sign up!</h2>
-        </div>
         <form method="post" action="/user/new">
           <div>
             <input type="text" placeholder="Username" name="name" value="<% @user && @user.name %>">
