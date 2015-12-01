@@ -42,8 +42,8 @@ input{
 .background{
   background-image: url(../assets/landing_page_pic.jpg);
   background-size: cover;
-  padding-top: 55px;
-  padding-bottom: 7.5em;
+  padding-top: 75px;
+  padding-bottom: 14.5em;
   width:100%;
   
 }
@@ -112,7 +112,7 @@ input{
 .drag {
   font-size: 28px;
   font-weight: 700;
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .shelf-title {
